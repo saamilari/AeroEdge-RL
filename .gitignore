@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions / CUDA cache
+*.so
+*.dll
+*.pyd
+*.cubin
+*.fatbin
+*.ptx
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Model checkpoints & temporary caches (keep final lightweight weights & plots)
+*.engine
+*.onnx.data
+wandb/
+runs/
+.pytest_cache/
+.cache/
+
+# OS specific
+.DS_Store
+Thumbs.db

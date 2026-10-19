@@ -1,0 +1,149 @@
+{
+  "gpu_device": "NVIDIA GeForce RTX 3050",
+  "detection_metrics": {
+    "Baseline_SingleScale": {
+      "mAP50": 0.7703116461482468,
+      "mean_iou": 0.523847798558652,
+      "tiny_recall": 0.7135416666666666,
+      "mAP50_curve": [
+        0.6951065902174849,
+        0.721894356923377,
+        0.7316541762685691,
+        0.7407518362672567,
+        0.7480501120346148,
+        0.7586485601410248,
+        0.7703116461482468
+      ]
+    },
+    "AeroMicroDet_VisionOnly": {
+      "mAP50": 0.8451184892149215,
+      "mean_iou": 0.6456507132212381,
+      "tiny_recall": 0.8125,
+      "mAP50_curve": [
+        0.7530463045600638,
+        0.7531048034299376,
+        0.7968266106171086,
+        0.8358388412820987,
+        0.8451962693412214,
+        0.8449411317449161,
+        0.8451184892149215
+      ]
+    },
+    "AeroMicroDet_EKF_Fused": {
+      "mAP50": 0.9900603341584159,
+      "mean_iou": 0.7533446853442014,
+      "tiny_recall": 0.9947916666666666,
+      "mAP50_curve": [
+        0.9596490909350822,
+        0.9900216584158416,
+        0.9900216584158416,
+        0.9800031002228708,
+        0.9899048607549997,
+        0.9899048607549997,
+        0.9900603341584159
+      ]
+    }
+  },
+  "controller_benchmarks": {
+    "Cascaded_PID": {
+      "mean_reward": 861.5196121852857,
+      "mean_los_error_deg": 4.743985833477986,
+      "mean_dist_error_m": 9.660966150424898,
+      "fov_lock_rate_pct": 96.55,
+      "mean_action_jerk": 0.0690205623551258,
+      "mean_ekf_error_m": 1.3489741169635807
+    },
+    "Augmented_PN": {
+      "mean_reward": 895.5351255553245,
+      "mean_los_error_deg": 3.034947112855126,
+      "mean_dist_error_m": 9.3582306336502,
+      "fov_lock_rate_pct": 99.05000000000001,
+      "mean_action_jerk": 0.05901982291631714,
+      "mean_ekf_error_m": 1.5218270036563457
+    },
+    "SingleStage_MLP_RL": {
+      "mean_reward": 814.9439415102036,
+      "mean_los_error_deg": 6.04581844538435,
+      "mean_dist_error_m": 12.088379364579058,
+      "fov_lock_rate_pct": 94.86666666666666,
+      "mean_action_jerk": 0.012910266919198395,
+      "mean_ekf_error_m": 1.262556002056352
+    },
+    "TwoStage_LSTM_RL": {
+      "mean_reward": 848.0730678815623,
+      "mean_los_error_deg": 5.395733706188442,
+      "mean_dist_error_m": 10.548932775780107,
+      "fov_lock_rate_pct": 97.56666666666666,
+      "mean_action_jerk": 0.01167296284370165,
+      "mean_ekf_error_m": 1.3010289193083293
+    },
+    "TwoStage_Transformer_RL_NoEKF": {
+      "mean_reward": 808.9926007895982,
+      "mean_los_error_deg": 6.517484424354642,
+      "mean_dist_error_m": 10.51182781008537,
+      "fov_lock_rate_pct": 90.05,
+      "mean_action_jerk": 0.03821140626086699,
+      "mean_ekf_error_m": 1.2832505283431972
+    },
+    "TwoStage_Transformer_RL_EKF": {
+      "mean_reward": 854.7542845673224,
+      "mean_los_error_deg": 4.230426950302966,
+      "mean_dist_error_m": 10.697127432922132,
+      "fov_lock_rate_pct": 96.5336489685492,
+      "mean_action_jerk": 0.02320042436586633,
+      "mean_ekf_error_m": 3.7955023588786627
+    }
+  },
+  "stress_test": {
+    "occlusion_levels_pct": [
+      0,
+      15,
+      30,
+      45
+    ],
+    "fov_lock_by_occlusion": {
+      "Two-Stage Transformer-RL + EKF": [
+        97.12487240558013,
+        96.21666666666667,
+        93.68705035971223,
+        86.98202459791864
+      ],
+      "LSTM-RL + EKF": [
+        93.31666666666666,
+        97.23333333333333,
+        94.8,
+        95.72311920302302
+      ],
+      "3D Augmented Prop. Nav (APN)": [
+        99.33333333333333,
+        98.91666666666666,
+        97.28333333333333,
+        95.07372654155496
+      ],
+      "Cascaded PID Baseline": [
+        98.88333333333334,
+        96.26666666666667,
+        90.73333333333333,
+        79.91934128717863
+      ]
+    }
+  },
+  "edge_acceleration": {
+    "cpu_preproc_nms_ms": 201.10254000173882,
+    "unfused_pytorch_gpu_ms": 0.8259114999964368,
+    "custom_fused_cuda_ms": 0.037159600004088134,
+    "kernel_speedup_vs_cpu": 5411.859653484279,
+    "kernel_speedup_vs_unfused_gpu": 22.22606001963352,
+    "kernel_max_abs_error": 4.172325134277344e-07,
+    "pytorch_fp32_nn_ms": 5.0007819999397425,
+    "onnx_int8_hybrid_ms": 1.2243519998931636,
+    "tensorcore_fp16_nn_ms": 3.0475873333246755,
+    "total_pipeline_baseline_ms": 206.10332200167855,
+    "total_pipeline_accelerated_ms": 3.0847469333287636,
+    "total_pipeline_fps": 324.1757011557819,
+    "end_to_end_speedup": 66.81368892043004,
+    "fp32_size_kb": 915.40625,
+    "int8_policy_size_kb": 175.2021484375
+  },
+  "total_execution_time_sec": 285.82976180000696
+}
