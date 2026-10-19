@@ -1,5 +1,7 @@
 # AeroEdge-RL: Closed-Loop Small-Object Perception, Multi-Sensor EKF Fusion & Two-Stage Transformer-RL Trajectory Control with Custom CUDA Acceleration
 
+> 🌐 **Language / Dil Seçimi:** **🇬🇧 English Documentation** | [🇹🇷 Türkçe Dokümantasyon](README_TR.md)
+
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![PyTorch 2.5](https://img.shields.io/badge/PyTorch-2.5%2Bcu121-ee4c2c.svg)](https://pytorch.org/)
 [![CUDA C++](https://img.shields.io/badge/CUDA-Custom%20C%2B%2B%20Kernels-76b900.svg)](https://developer.nvidia.com/cuda-toolkit)
